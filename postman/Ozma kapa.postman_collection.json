@@ -1,0 +1,1516 @@
+{
+	"info": {
+		"_postman_id": "193e5e96-5735-499c-9c9f-bd78075186bb",
+		"name": "Ozma kapa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37952067"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "CambiarDeRol",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5400/v1/user/usermode/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"user",
+								"usermode",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Alan",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Alambrito",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alanrodas038@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ellos123!a",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "48333561",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/user/createuser",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"user",
+								"createuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5400/v1/alluser",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"alluser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:5400/v1/user/updateuser/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"user",
+								"updateuser",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5400/v1/user/deleteuser/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"user",
+								"deleteuser",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth Copy",
+			"item": [
+				{
+					"name": "Registrar Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Alan",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Pérez Rodas",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "mazino",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mazino@kdsa.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "dsad#\"$Daas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "54322351",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "USER",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3629/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3629",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"token1\", data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "identifier",
+									"value": "alanrodas038@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ellos123!a",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"token1\", data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "identifier",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adminPassword123",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/test",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "AddCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jardineria1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Puedes encontrar los mejores jardineros",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/category/addcategory",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"category",
+								"addcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/category/allcategories?",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"category",
+								"allcategories"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/category/getcategory/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"category",
+								"getcategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Au",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Plomeria",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Pudes encon trar los mejores plomeros",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/category/updatecategory/683e688886087dcea4a98552",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"category",
+								"updatecategory",
+								"683e688886087dcea4a98552"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/category/deletecategory/683e6b01fbb3d93ddb0c91c9",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"category",
+								"deletecategory",
+								"683e6b01fbb3d93ddb0c91c9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "addReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "worker",
+									"value": "683e565aacb4958a7e95e688",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "buen trabajo ME ENCANTO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/review/createreview",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"review",
+								"createreview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdWorker",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "identifier",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adminPassword123",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/review/reviews/worker/683e565aacb4958a7e95e688",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"review",
+								"reviews",
+								"worker",
+								"683e565aacb4958a7e95e688"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "worker",
+									"value": "683e565aacb4958a7e95e688",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "meh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/review/updatereview/683e7297c05278811aca1358",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"review",
+								"updatereview",
+								"683e7297c05278811aca1358"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 3",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "identifier",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adminPassword123",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/review/updatereview/683e7297c05278811aca1358",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"review",
+								"updatereview",
+								"683e7297c05278811aca1358"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WoprkerProfile",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "category",
+									"value": "683e688886087dcea4a98552",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Soy un plomero a pasionado tengo 3 titulos ",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "12 calle avenida 18 Zona reforma continental",
+									"type": "text"
+								},
+								{
+									"key": "experienceYears",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "pricePerHour",
+									"value": "124",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/workerProfile/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"workerProfile",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/workerProfile/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"workerProfile",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Alan",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Alambrito",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alanrodas038@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ellos123!a",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "48333561",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/workerProfile/user/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"workerProfile",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 3",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/workerProfile/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"workerProfile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 4",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/workerProfile/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"workerProfile",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "participantId",
+									"value": "683e565aacb4958a7e95e688",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/chat/createchat",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"chat",
+								"createchat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "chatId",
+									"value": "6843637e88ff05279bc8dc03",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Hola que tal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/chat/message",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/chat/allchat",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"chat",
+								"allchat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 3",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/chat/get/:chatId",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"chat",
+								"get",
+								":chatId"
+							],
+							"variable": [
+								{
+									"key": "chatId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JobRequest",
+			"item": [
+				{
+					"name": "CreateJobRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "worker",
+									"value": "683e565aacb4958a7e95e688",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Trabaj oetico de plomeria areglar ba;o",
+									"type": "text"
+								},
+								{
+									"key": "agreedPrice",
+									"value": "120",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/jobRequest/jobrequests",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"jobRequest",
+								"jobrequests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetJobRequestClient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/jobRequest/jobrequests/client",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"jobRequest",
+								"jobrequests",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetJobeRequestWOrker",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/jobRequest",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"jobRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Udpdate Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "CONFIRMED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/jobRequest/jobrequests/6843b7117e364a897c652e84/status",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"jobRequest",
+								"jobrequests",
+								"6843b7117e364a897c652e84",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteJobRequest",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/jobRequest/deletejobrequests/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"jobRequest",
+								"deletejobrequests",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payemnt",
+			"item": [
+				{
+					"name": "Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "method",
+									"value": "CARD",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "JOB",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/payment/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"payment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mypayment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5400/v1/payment/my-payments",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"payment",
+								"my-payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recharge",
+			"item": [
+				{
+					"name": "Addrecharge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "method",
+									"value": "CARD",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/recharge/add",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"recharge",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecharge",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "identifier",
+									"value": "alanrodas038@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Ellos123!a",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/recharge/info",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"recharge",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecharge Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "jobAmount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ellos123!a",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5400/v1/recharge/commission",
+							"host": [
+								"localhost"
+							],
+							"port": "5400",
+							"path": [
+								"v1",
+								"recharge",
+								"commission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

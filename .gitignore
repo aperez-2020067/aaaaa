@@ -1,0 +1,17 @@
+# node_modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
