@@ -12,10 +12,6 @@ const workerProfileSchema = new Schema({
     ref: 'Category',
     required: true
   },
-  reviews: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Review'
-  }],
   description: {
     type: String,
     maxLength: 500
@@ -26,9 +22,6 @@ const workerProfileSchema = new Schema({
   experienceYears: {
     type: Number,
     default: 0
-  },
-  pricePerHour: {
-    type: Number
   },
   ratingAverage: {
     type: Number,

@@ -5,7 +5,7 @@ import Category from '../category/category.model.js';
 // Crear un perfil de trabajador
 export const createWorkerProfile = async (req, res) => {
   try {
-    const { category, description, location, experienceYears, pricePerHour } = req.body;
+    const { category, description, location, experienceYears } = req.body;
     const userId = req.user.uid;
 
     
@@ -30,8 +30,7 @@ export const createWorkerProfile = async (req, res) => {
       category,
       description,
       location,
-      experienceYears,
-      pricePerHour
+      experienceYears
     });
 
     await newProfile.save();
@@ -49,14 +48,6 @@ export const getAllWorkerProfiles = async (req, res) => {
     const profiles = await WorkerProfile.find()
       .populate('user', 'username name')
       .populate('category', 'name')
-      .populate({
-        path: 'reviews',
-        populate: {
-          path: 'client',
-          select: 'username name'
-        },
-        options: { sort: { createdAt: -1 } }
-      })
       .sort({ createdAt: -1 });
 
     return res.send({ success: true, message: 'Worker profiles retrieved', profiles });
@@ -73,15 +64,7 @@ export const getWorkerProfileByUserId = async (req, res) => {
 
     const profile = await WorkerProfile.findOne({ user: userId })
       .populate('user', 'username name')
-      .populate('category', 'name')
-      .populate({
-        path: 'reviews',
-        populate: {
-          path: 'client',
-          select: 'username name' 
-        },
-        options: { sort: { createdAt: -1 } } 
-      });
+      .populate('category', 'name');
 
     if (!profile) {
       return res.status(404).send({ success: false, message: 'Worker profile not found' });
@@ -98,7 +81,7 @@ export const getWorkerProfileByUserId = async (req, res) => {
 // Actualizar perfil del trabajador
 export const updateWorkerProfile = async (req, res) => {
   try {
-    const { category, description, location, experienceYears, pricePerHour } = req.body;
+    const { category, description, location, experienceYears} = req.body;
     const userId = req.user.uid;
 
     const profile = await WorkerProfile.findOne({ user: userId });
@@ -117,7 +100,6 @@ export const updateWorkerProfile = async (req, res) => {
     if (description) profile.description = description;
     if (location) profile.location = location;
     if (experienceYears !== undefined) profile.experienceYears = experienceYears;
-    if (pricePerHour !== undefined) profile.pricePerHour = pricePerHour;
 
     await profile.save();
 

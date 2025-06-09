@@ -27,8 +27,11 @@ export const addRecharge = async (req, res) => {
       recharge = new Recharge({ user: userId });
     }
 
+    let number1 = recharge.balance * 1;
+    let number2 = amount * 1;
+    let total = number1 + number2;
     
-    recharge.balance += amount;
+    recharge.balance = total;
     recharge.history.push({
       amount,
       reference: payment._id

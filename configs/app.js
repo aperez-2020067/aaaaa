@@ -14,6 +14,7 @@ import chatRoutes from '../src/chat/chat.routes.js'
 import jobeReQuestRoutes from '../src/jobRequest/jobRequest.routes.js'
 import paymentRoutes from '../src/payment/payment.routes.js'
 import rechargeRoutes from '../src/recharge/recharge.routes.js'
+import clientProfileRoutes from '../src/clientProfile/clientProfile.routes.js'
 
 import { limiter } from '../middlewares/rate.limit.js'
 
@@ -36,7 +37,7 @@ const routes = (app)=>{
     app.use('/v1/jobRequest', jobeReQuestRoutes);
     app.use('/v1/payment', paymentRoutes);
     app.use('/v1/recharge', rechargeRoutes);
-   
+    app.use('/v1/clientProfile', clientProfileRoutes);
    
 };
 
